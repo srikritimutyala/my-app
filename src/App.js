@@ -1,22 +1,36 @@
-import logo from './logo.svg';
+// App.js
+
+import React, { useState } from 'react';
 import './App.css';
+import SubjectList from './SubjectList';
+import ChatBox from './ChatBox';
+import { auth, signInWithGoogle } from './firebase';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const handleSignIn = async () => {
+    try {
+      const result = await signInWithGoogle();
+      const user = result.user;
+      setCurrentUser(user);
+    } catch (error) {
+      console.error("Error signing in with Google: ", error);
+      alert('Failed to sign in with Google');
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       
+          <div>
+            <div className="main-content">
+              <SubjectList />
+              {/* <ChatBox currentUser={currentUser} /> */}
+            </div>
+          </div>
+        
       </header>
     </div>
   );

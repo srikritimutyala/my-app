@@ -1,0 +1,71 @@
+.chat-box {
+    width: 800px; /* Adjust as needed */
+    margin: 0 0 0 20px; /* 20px margin on the left */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .lists {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tutors-list,
+  .tutees-list {
+    width: 48%; /* Adjust width to fit side by side */
+  }
+  
+  .tutors-list ul,
+  .tutees-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .tutors-list li,
+  .tutees-list li {
+    padding: 5px 0;
+    cursor: pointer;
+  }
+  
+  .tutors-list li:hover,
+  .tutees-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .messages-container {
+    height: 300px; /* Set a fixed height for the messages container */
+    overflow-y: auto; /* Make the container scrollable */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .messages {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    margin-bottom: 5px;
+  }
+  
+  .message-input {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-input textarea {
+    resize: none;
+    margin-bottom: 5px;
+  }
+  
+  .message-input button {
+    align-self: flex-end;
+    padding: 5px 10px;
+  }
+  
